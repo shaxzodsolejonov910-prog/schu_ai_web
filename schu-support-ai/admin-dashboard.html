@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCHU Support AI — Admin Dashboard</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+<!-- ===== Admin Sidebar ===== -->
+<aside class="a-sidebar" id="aSidebar">
+  <div class="a-brand">
+    <div class="mark"><img src="assets/images/schuuniver.png" alt="SCH logo"></div>
+    <div class="name">SCHU SUPPORT AI<small>ADMIN PANEL</small></div>
+  </div>
+
+  <nav class="a-nav">
+    <a href="admin-dashboard.html" class="a-nav-item active"><i class="bi bi-grid-1x2-fill left"></i> Dashboard</a>
+    <a href="admin-dashboard.html#notices" class="a-nav-item"><i class="bi bi-megaphone left"></i> Notices</a>
+
+    <div class="a-nav-item has-submenu" data-target="kb-submenu"><i class="bi bi-journal-bookmark left"></i> Knowledge Base <i class="bi bi-chevron-down chev"></i></div>
+    <div class="a-submenu" id="kb-submenu">
+      <a href="guides.html">Guides</a>
+      <a href="services.html">Services</a>
+      <a href="life-in-korea.html">Life in Korea</a>
+    </div>
+
+    <a href="admin-dashboard.html#documents" class="a-nav-item"><i class="bi bi-file-earmark-text left"></i> Documents</a>
+    <a href="admin-dashboard.html#faq" class="a-nav-item"><i class="bi bi-question-circle left"></i> FAQ Management</a>
+
+    <div class="a-nav-item has-submenu" data-target="users-submenu"><i class="bi bi-people left"></i> Users <i class="bi bi-chevron-down chev"></i></div>
+    <div class="a-submenu" id="users-submenu">
+      <a href="#">All Users</a>
+      <a href="#">Admin Accounts</a>
+    </div>
+
+    <a href="admin-dashboard.html#chatlogs" class="a-nav-item"><i class="bi bi-chat-dots left"></i> Chat Logs</a>
+    <a href="admin-dashboard.html#analytics" class="a-nav-item"><i class="bi bi-bar-chart left"></i> Analytics</a>
+    <a href="admin-dashboard.html#feedback" class="a-nav-item"><i class="bi bi-emoji-smile left"></i> Feedback</a>
+
+    <div class="a-nav-item has-submenu" data-target="settings-submenu"><i class="bi bi-gear left"></i> Settings <i class="bi bi-chevron-down chev"></i></div>
+    <div class="a-submenu" id="settings-submenu">
+      <a href="#">General</a>
+      <a href="#">AI Model</a>
+      <a href="#">Notifications</a>
+    </div>
+
+    <a href="#" class="a-nav-item"><i class="bi bi-person-badge left"></i> Admin Accounts</a>
+  </nav>
+
+  <div class="a-sidebar-bottom">
+    <div class="a-admin-card">
+      <div class="avatar"><i class="bi bi-person-fill"></i></div>
+      <div class="info">
+        <div class="a-name">Admin <i class="bi bi-patch-check-fill" style="color:#1b57c9;font-size:12px;"></i></div>
+        <div class="a-email" id="adminEmail">admin@schu.ac.kr</div>
+        <div class="a-status">Online</div>
+      </div>
+    </div>
+    <a href="login.html" class="a-logout" id="adminLogout"><i class="bi bi-box-arrow-left"></i> Log out</a>
+  </div>
+</aside>
+
+<div class="a-sidebar-overlay" id="aSidebarOverlay"></div>
+
+<!-- ===== Main ===== -->
+<div class="a-main">
+
+  <div class="a-topbar">
+    <div class="d-flex">
+      <button class="a-hamburger-btn" id="aHamburgerBtn" type="button" aria-label="Menu"><i class="bi bi-list"></i></button>
+      <div>
+        <h1>Dashboard</h1>
+        <p>Welcome back, Admin! Here's what's happening with SCHU Support AI.</p>
+      </div>
+    </div>
+    <div class="a-topbar-right">
+      <div class="a-date-chip"><i class="bi bi-calendar3"></i> <span id="aDateChip">2026.09.13 (Sun)</span></div>
+      <div class="a-bell-wrap"><i class="bi bi-bell"></i><span class="badge-dot"></span></div>
+    </div>
+  </div>
+
+  <div class="a-content">
+
+    <!-- Stat cards -->
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="top-row">
+          <div class="icon-wrap icon-users"><i class="bi bi-people-fill"></i></div>
+          <div class="label">Total Users</div>
+        </div>
+        <div class="value">1,248</div>
+        <div class="delta"><i class="bi bi-arrow-up-short"></i>12.5% from last month</div>
+      </div>
+      <div class="stat-card">
+        <div class="top-row">
+          <div class="icon-wrap icon-convo"><i class="bi bi-chat-square-text-fill"></i></div>
+          <div class="label">Total Conversations</div>
+        </div>
+        <div class="value">3,682</div>
+        <div class="delta"><i class="bi bi-arrow-up-short"></i>18.7% from last month</div>
+      </div>
+      <div class="stat-card">
+        <div class="top-row">
+          <div class="icon-wrap icon-docs"><i class="bi bi-file-earmark-text-fill"></i></div>
+          <div class="label">Documents</div>
+        </div>
+        <div class="value">142</div>
+        <div class="delta"><i class="bi bi-arrow-up-short"></i>4 new this month</div>
+      </div>
+      <div class="stat-card">
+        <div class="top-row">
+          <div class="icon-wrap icon-faq"><i class="bi bi-question-circle-fill"></i></div>
+          <div class="label">FAQs</div>
+        </div>
+        <div class="value">86</div>
+        <div class="delta"><i class="bi bi-arrow-up-short"></i>3 new this month</div>
+      </div>
+      <div class="stat-card">
+        <div class="top-row">
+          <div class="icon-wrap icon-feedback"><i class="bi bi-hand-thumbs-up-fill"></i></div>
+          <div class="label">Feedbacks</div>
+        </div>
+        <div class="value">256</div>
+        <div class="delta"><i class="bi bi-arrow-up-short"></i>8.2% from last month</div>
+      </div>
+    </div>
+
+    <!-- Chart / Top topics / System status -->
+    <div class="dash-grid-1">
+      <div class="a-panel">
+        <div class="a-panel-head">
+          <h2>Conversation Statistics</h2>
+          <select class="a-select" id="chartRangeSelect">
+            <option>This Month</option>
+            <option>Last 3 Months</option>
+            <option>This Year</option>
+          </select>
+        </div>
+        <div class="chart-legend">
+          <span><i class="dot dot-solid"></i> This Month</span>
+          <span><i class="dot dot-dash"></i> Last Month</span>
+        </div>
+        <div id="conversationChart"></div>
+      </div>
+
+      <div class="a-panel">
+        <div class="a-panel-head">
+          <h2>Top 5 Asked Topics</h2>
+          <span class="view-all">View all</span>
+        </div>
+        <div class="topic-rank-row">
+          <div class="rank-num">1</div>
+          <div class="rank-label">Dormitory Application</div>
+          <div class="rank-count">532</div>
+          <div class="rank-pct">14.4%</div>
+        </div>
+        <div class="topic-rank-row">
+          <div class="rank-num">2</div>
+          <div class="rank-label">Visa Extension</div>
+          <div class="rank-count">486</div>
+          <div class="rank-pct">13.2%</div>
+        </div>
+        <div class="topic-rank-row">
+          <div class="rank-num">3</div>
+          <div class="rank-label">Course Registration</div>
+          <div class="rank-count">415</div>
+          <div class="rank-pct">11.3%</div>
+        </div>
+        <div class="topic-rank-row">
+          <div class="rank-num">4</div>
+          <div class="rank-label">Scholarship Information</div>
+          <div class="rank-count">362</div>
+          <div class="rank-pct">9.8%</div>
+        </div>
+        <div class="topic-rank-row">
+          <div class="rank-num">5</div>
+          <div class="rank-label">Insurance</div>
+          <div class="rank-count">298</div>
+          <div class="rank-pct">8.1%</div>
+        </div>
+      </div>
+
+      <div class="a-panel">
+        <div class="a-panel-head"><h2>System Status</h2></div>
+        <div class="status-row"><span>AI Service</span><span class="status-text"><i class="dot-status"></i>Online</span></div>
+        <div class="status-row"><span>Database</span><span class="status-text"><i class="dot-status"></i>Online</span></div>
+        <div class="status-row"><span>Storage</span><span class="status-text"><i class="dot-status"></i>Online</span></div>
+        <div class="status-row"><span>Email Service</span><span class="status-text"><i class="dot-status"></i>Online</span></div>
+        <div class="status-row">
+          <span>Backup</span>
+          <span style="text-align:right;">
+            <span class="status-text"><i class="dot-status"></i>Completed</span>
+            <div class="status-sub">Today 02:00 AM</div>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent notices / chat logs / quick actions -->
+    <div class="dash-grid-2">
+      <div class="a-panel" id="notices">
+        <div class="a-panel-head">
+          <h2>Recent Notices</h2>
+          <span class="view-all">View all</span>
+        </div>
+        <div id="recentNoticesList"></div>
+        <button class="quick-action-btn" style="margin-top:14px;justify-content:center;color:var(--sch-blue);" id="addNoticeBtn" type="button">
+          <i class="bi bi-plus-lg"></i> Add New Notice
+        </button>
+      </div>
+
+      <div class="a-panel" id="chatlogs">
+        <div class="a-panel-head">
+          <h2>Recent Chat Logs</h2>
+          <span class="view-all">View all</span>
+        </div>
+        <div id="recentChatLogsList"></div>
+      </div>
+
+      <div class="a-panel">
+        <div class="a-panel-head"><h2>Quick Actions</h2></div>
+        <button class="quick-action-btn" type="button"><i class="bi bi-megaphone"></i> Add Notice</button>
+        <button class="quick-action-btn" type="button"><i class="bi bi-cloud-upload"></i> Upload Document</button>
+        <button class="quick-action-btn" type="button"><i class="bi bi-question-circle"></i> Add FAQ</button>
+        <button class="quick-action-btn" type="button"><i class="bi bi-people"></i> View All Users</button>
+        <button class="quick-action-btn" type="button"><i class="bi bi-arrow-repeat"></i> AI Knowledge Sync</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="assets/js/admin.js"></script>
+</body>
+</html>

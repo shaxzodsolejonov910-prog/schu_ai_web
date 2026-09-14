@@ -1,0 +1,461 @@
+/* ==== Reset ===*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg, #f4f6f4);
+    color: var(--text, #1c2333);
+}
+
+/* === Umumiy layaot ==*/
+.login-wrapper{
+    display: flex;
+    min-height: 100vh;
+}
+
+/*===chap tomon===*/
+.login-left {
+    flex: 1.1;
+    position: relative;
+    background-color: #1b3a6b;
+    background-image:linear-gradient(180deg, rgba(10,20,50,0.15), rgba(10,20,50,0.65)),
+    url('../images/campus.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-logo img{
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.brand-logo span{
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.hero-title{
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.hero-sub {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  max-width: 380px;
+}
+
+.lang-select-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: #222;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  width: fit-content;
+}
+
+/* ===== O'ng tomon ===== */
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: #1e4fd8;
+}
+
+.login-box .subtitle {
+  color: #6b7386;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* ===== Tab tugmalar ===== */
+.login-tabs {
+  display: flex;
+  background: #eef0f5;
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #6b7386;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tab-btn.active {
+  background: #1e4fd8;
+  color: #fff;
+}
+
+/* ===== Forma ===== */
+#loginForm label {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon i:first-child {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9aa0b4;
+}
+
+.input-icon input {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  border: 1px solid #dfe2ea;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-icon input:focus {
+  border-color: #1e4fd8;
+}
+
+.toggle-eye {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9aa0b4;
+  cursor: pointer;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0 20px;
+  font-size: 13.5px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #3c4257;
+}
+
+.forgot {
+  color: #1e4fd8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-login {
+  width: 100%;
+  background: #1e4fd8;
+  color: #fff;
+  border: none;
+  padding: 13px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background: #123ba8;
+}
+
+/* ===== Create account ===== */
+.signup-row {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.signup-row p {
+  font-size: 13.5px;
+  color: #6b7386;
+  margin-bottom: 10px;
+}
+
+.btn-create {
+  display: block;
+  border: 1px solid #dfe2ea;
+  border-radius: 8px;
+  padding: 10px;
+  text-decoration: none;
+  color: #1e4fd8;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* ===== Footer ===== */
+.login-footer {
+  position: fixed;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: #9aa0b4;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .login-wrapper {
+    flex-direction: column;
+  }
+  .login-left {
+    min-height: 260px;
+  }
+  .hero-title {
+    font-size: 32px;
+  }
+}
+
+
+body.dark-mode {
+  --bg: #12151f;
+  --text: #e8ebf3;
+  --muted: #9aa3b3;
+  --border: #2a2f3d;
+}
+
+/* Hero fon gradienti */
+body.dark-mode .hero {
+  background: linear-gradient(120deg, #1a2332 0%, #17202e 55%, #141b28 100%);
+}
+
+body.dark-mode .hero-text h1 { color: #e8ebf3; }
+body.dark-mode .hero-text p { color: #b7c0d1; }
+
+body.dark-mode .ask-box { background: #1e2839; }
+body.dark-mode .ask-box input { color: #e8ebf3; }
+body.dark-mode .ask-box input::placeholder { color: #7c869a; }
+
+body.dark-mode .try-asking { color: #9aa3b3; }
+
+body.dark-mode .chip {
+  background: #24314a;
+  color: #a9c4f5;
+}
+
+body.dark-mode .sidebar,
+body.dark-mode .topbar,
+body.dark-mode .card-panel {
+  background: #1a1e2b;
+}
+
+body.dark-mode .lang-select {
+  background: #1a1e2b;
+  color: #e8ebf3;
+  border-color: #2a2f3d;
+}
+
+body.dark-mode .side-panel {
+  background-color: #1a1e2b;
+}
+
+body.dark-mode footer.site-footer {
+  background: #1a1e2b;
+  color: #9aa3b3;
+  border-top-color: #2a2f3d;
+}
+
+body.dark-mode footer.site-footer .foot-brand {
+  color: #e8ebf3;
+}
+
+body.dark-mode .topic-dorm   { background: #1c2a3d; }
+body.dark-mode .topic-acad   { background: #1a2e26; }
+body.dark-mode .topic-visa   { background: #241f38; }
+body.dark-mode .topic-schol  { background: #332711; }
+body.dark-mode .topic-health { background: #331c22; }
+
+body.dark-mode .topic-card h3 { color: #e8ebf3; }
+body.dark-mode .topic-card p  { color: #9aa3b3; }
+
+body.dark-mode .ai-card {
+  background: linear-gradient(160deg, #1c2a3d, #182337);
+}
+
+body.dark-mode .sos-card {
+  background: #3a1f22;
+  border-color: #5a2b30;
+}
+body.dark-mode .sos-card .label { color: #f2a39c; }
+body.dark-mode .sos-card .number { color: #ff8a80; }
+
+body.dark-mode .community-card { background: #16233a; }
+body.dark-mode .community-card .title { color: #9fc1f5; }
+body.dark-mode .community-card p { color: #b7c0d1; }
+
+body.dark-mode .btn-join {
+  background: #1f2c40;
+  border-color: #31456b;
+  color: #cfe0fb;
+}
+
+body.dark-mode .section-title,
+body.dark-mode .side-panel-title,
+body.dark-mode .ai-card h4,
+body.dark-mode .notice-title,
+body.dark-mode .quicklink-row,
+body.dark-mode .contact-row .c-title {
+  color: #e8ebf3;
+}
+
+body.dark-mode .user-chip {
+  color: #e8ebf3;
+}
+
+
+.dropdown-wrap {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(20, 45, 90, .12);
+  width: 260px;
+  padding: 8px;
+  z-index: 1100;
+
+  /* Boshida yashirin */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all .18s ease;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  padding: 8px 10px 4px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: #2b3245;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f2f5fb;
+}
+
+.dropdown-item i {
+  color: var(--sch-blue);
+  font-size: 15px;
+  width: 18px;
+  text-align: center;
+}
+
+.dd-text {
+  font-weight: 500;
+  color: #2b3245;
+}
+
+.dd-time {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+/* Dark mode */
+body.dark-mode .dropdown-menu {
+  background: #1a1e2b;
+  border-color: #2a2f3d;
+}
+
+body.dark-mode .dropdown-title,
+body.dark-mode .dd-text {
+  color: #e8ebf3;
+}
+
+body.dark-mode .dropdown-item:hover {
+  background: #232a3b;
+}
+
+
+/* Search sahifasi */
+#searchResults .text-muted {
+  color: var(--muted) !important;
+  padding: 30px 0;
+  text-align: center;
+  display: block;
+}
+
+#searchResults .notice-row {
+  cursor: pointer;
+}
+
+#searchResults .notice-row:hover {
+  background: rgba(27, 87, 201, 0.04);
+}
+
+body.dark-mode #searchResults .notice-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}

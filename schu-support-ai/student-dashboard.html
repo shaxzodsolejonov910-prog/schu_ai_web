@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCHU Support AI — Home</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/dashboard.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ===== Sidebar ===== -->
+<aside class="sidebar" id="sidebar">
+  <div class="d-flex align-items-center gap-2 mb-1">
+    <div class="brand-mark"><img src="assets/images/schuuniver.png" alt="SCH logo"></div>
+    <div class="brand-line" style="margin-left:2px;">SOON CHUN HYANG<br>UNIVERSITY</div>
+  </div>
+  <div class="app-title">SCHU<br><span>SUPPORT AI</span></div>
+  <div class="app-sub">International Student<br>Support Helper</div>
+
+  <nav class="flex-grow-1">
+    <a href="student-dashboard.html" class="nav-item"><i class="bi bi-chat-square-text-fill"></i> Home</a>
+    <a href="ai-chat.html" class="nav-item"><i class="bi bi-robot"></i> AI Chat Assistant</a>
+    <a href="search.html" class="nav-item"><i class="bi bi-search"></i> Search</a>
+    <a href="notices.html" class="nav-item"><i class="bi bi-bell"></i> Notices</a>
+
+    <div class="nav-item has-submenu" data-target="guides-submenu">
+      <i class="bi bi-journal-bookmark"></i> Guides
+      <i class="bi bi-chevron-down chev"></i>
+    </div>
+    <div class="submenu" id="guides-submenu">
+      <a href="guides.html?cat=visa" class="submenu-item">Visa Guide</a>
+      <a href="guides.html?cat=dormitory" class="submenu-item">Dormitory Guide</a>
+      <a href="guides.html?cat=academic" class="submenu-item">Academic Guide</a>
+    </div>
+
+    <div class="nav-item has-submenu" data-target="services-submenu">
+      <i class="bi bi-grid"></i> Services
+      <i class="bi bi-chevron-down chev"></i>
+    </div>
+    <div class="submenu" id="services-submenu">
+      <a href="services.html?cat=academic" class="submenu-item">Course Registration</a>
+      <a href="services.html?cat=scholarship" class="submenu-item">Scholarship</a>
+      <a href="services.html?cat=health" class="submenu-item">Health &amp; Insurance</a>
+    </div>
+
+    <div class="nav-item has-submenu" data-target="life-submenu">
+      <i class="bi bi-geo-alt"></i> Life in Korea
+      <i class="bi bi-chevron-down chev"></i>
+    </div>
+    <div class="submenu" id="life-submenu">
+      <a href="life-in-korea.html?cat=transportation" class="submenu-item">Transportation</a>
+      <a href="life-in-korea.html?cat=housing" class="submenu-item">Banking</a>
+      <a href="life-in-korea.html?cat=culture" class="submenu-item">Culture &amp; Events</a>
+    </div>
+
+    <a href="contact-us.html" class="nav-item"><i class="bi bi-telephone"></i> Contact Us</a>
+    <a href="feedback.html" class="nav-item"><i class="bi bi-chat-left-dots"></i> Feedback</a>
+  </nav>
+
+  <div class="sidebar-bottom">
+    <div class="sos-card">
+      <span class="sos-badge">SOS</span>
+      <div class="label">Emergency</div>
+      <div style="font-size:11.5px;color:#c0342b;margin-bottom:2px;">For urgent help</div>
+      <div class="number">041-530-5114</div>
+      <button class="btn-call" type="button"><i class="bi bi-telephone-fill me-1"></i>Call Now</button>
+    </div>
+    <div class="community-card">
+      <div class="title">SCHU Global Community</div>
+      <p>Join our community and connect with other international students!</p>
+      <button class="btn-join" type="button">Join Now</button>
+      <div class="avatars mt-2">
+        <i class="bi bi-person-circle"></i><i class="bi bi-person-circle"></i><i class="bi bi-person-circle"></i>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- Mobile overlay backdrop -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- ===== Main ===== -->
+<div class="main-wrap">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu" type="button">
+      <i class="bi bi-list"></i>
+    </button>
+    <div class="lang-select"><i class="bi bi-globe2"></i> English <i class="bi bi-chevron-down" style="font-size:10px;"></i></div>
+    <div class="topbar-icons">
+      <i class="bi bi-moon" id="darkModeToggle" style="cursor: pointer;"></i>
+
+      <div class="dropdown-wrap">
+        <i class="bi bi-bell" id="notifBellBtn" style="cursor:pointer;"></i>
+        <div class="dropdown-menu" id="notifDropdown">
+          <div class="dropdown-title">Notifications</div>
+          <div class="dropdown-item">
+            <i class="bi bi-bell-fill"></i>
+            <div>
+              <div class="dd-text">New dormitory notice posted</div>
+              <div class="dd-time">2 hours ago</div>
+            </div>
+          </div>
+          <div class="dropdown-item">
+            <i class="bi bi-calendar-event"></i>
+            <div>
+              <div class="dd-text">Course registration starts tomorrow</div>
+              <div class="dd-time">1 day ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dropdown-wrap">
+        <div class="user-chip" id="userChipBtn" style="cursor:pointer;">
+          <div class="avatar"><i class="bi bi-person-fill"></i></div>
+          <span id="userGreetingText">Hello Student!</span><i class="bi bi-chevron-down" style="font-size:10px;"></i>
+        </div>
+        <div class="dropdown-menu dropdown-menu-right" id="userDropdown">
+          <a href="#" class="dropdown-item"><i class="bi bi-person"></i> My Profile</a>
+          <a href="#" class="dropdown-item"><i class="bi bi-gear"></i> Settings</a>
+          <a href="login.html" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Log Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="row g-4">
+
+      <!-- Left / center column -->
+      <div class="col-lg-9">
+
+        <!-- Hero -->
+        <div class="hero mb-4">
+          <div class="hero-photo">
+            <img src="assets/images/campus.jpg" alt="Campus">
+          </div>
+          <div class="hero-text">
+            <h1>Welcome to<br><span class="accent">SCHU</span> Support AI</h1>
+            <p>Your AI assistant for everything about studying and living at Soonchunhyang University.</p>
+            <div class="ask-box">
+              <input type="text" id="heroSearchInput" placeholder="Ask anything about SCHU...">
+              <button class="send-btn" type="button"><i class="bi bi-send-fill" style="font-size:14px;"></i></button>
+            </div>
+            <div class="try-asking">Try asking:</div>
+            <div>
+              <span class="chip" role="button">Dormitory application</span>
+              <span class="chip" role="button">Visa extension</span>
+              <span class="chip" role="button">Course registration</span>
+              <span class="chip" role="button">Scholarship info</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Popular Topics -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="section-title">Popular Topics</h2>
+        </div>
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-md-4 col-xl">
+            <div class="topic-card topic-dorm">
+              <div class="icon-wrap"><i class="bi bi-building"></i></div>
+              <h3>Dormitory</h3>
+              <p>Application, Move-in, Rules and more</p>
+              <i class="bi bi-arrow-right arrow"></i>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-xl">
+            <div class="topic-card topic-acad">
+              <div class="icon-wrap"><i class="bi bi-book"></i></div>
+              <h3>Academic</h3>
+              <p>Course registration, Grades, Transcript</p>
+              <i class="bi bi-arrow-right arrow"></i>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-xl">
+            <div class="topic-card topic-visa">
+              <div class="icon-wrap"><i class="bi bi-file-earmark-text"></i></div>
+              <h3>Visa &amp; Immigration</h3>
+              <p>Visa extension, Alien registration</p>
+              <i class="bi bi-arrow-right arrow"></i>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-xl">
+            <div class="topic-card topic-schol">
+              <div class="icon-wrap"><i class="bi bi-cash-coin"></i></div>
+              <h3>Scholarships</h3>
+              <p>Global Korea, SCHU Scholarships</p>
+              <i class="bi bi-arrow-right arrow"></i>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-xl">
+            <div class="topic-card topic-health">
+              <div class="icon-wrap"><i class="bi bi-heart"></i></div>
+              <h3>Health &amp; Insurance</h3>
+              <p>Insurance, Clinic, Health checkup</p>
+              <i class="bi bi-arrow-right arrow"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Latest Notices -->
+        <div class="card-panel">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h2 class="section-title">Latest Notices</h2>
+            <a href="notices.html" class="view-all">View all</a>
+          </div>
+          <div class="notice-row">
+            <span class="tag tag-new">NEW</span>
+            <span class="notice-title">2026-2nd Semester Dormitory Application Notice</span>
+            <span class="notice-date">2026.05.24</span>
+            <i class="bi bi-chevron-right" style="color:#c3cad6;"></i>
+          </div>
+          <div class="notice-row">
+            <span class="tag tag-notice">NOTICE</span>
+            <span class="notice-title">Summer Session Course Registration 안내</span>
+            <span class="notice-date">2026.05.20</span>
+            <i class="bi bi-chevron-right" style="color:#c3cad6;"></i>
+          </div>
+          <div class="notice-row">
+            <span class="tag tag-notice">NOTICE</span>
+            <span class="notice-title">TOPIK Score Submission for Scholarship</span>
+            <span class="notice-date">2026.05.18</span>
+            <i class="bi bi-chevron-right" style="color:#c3cad6;"></i>
+          </div>
+          <div class="notice-row">
+            <span class="tag tag-new">NEW</span>
+            <span class="notice-title">Global Village Clean Day 안내</span>
+            <span class="notice-date">2026.05.15</span>
+            <i class="bi bi-chevron-right" style="color:#c3cad6;"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right column -->
+      <div class="col-lg-3">
+        <div class="d-flex flex-column gap-4">
+
+          <div class="ai-card">
+            <i class="bi bi-robot ai-illustration"></i>
+            <h4>AI Assistant</h4>
+            <p>Ask me anything about Soonchunhyang University!</p>
+            <a href="ai-chat.html" class="btn-start-chat">Start Chat <i class="bi bi-arrow-right"></i></a>
+          </div>
+
+          <div class="side-panel quicklinks">
+            <div class="side-panel-title">Quick Links</div>
+            <a href="contact-us.html" class="quicklink-row"><i class="bi bi-people qi"></i> International Office <i class="bi bi-chevron-right chevron"></i></a>
+            <a href="guides.html?cat=dormitory" class="quicklink-row"><i class="bi bi-house qi"></i> Dormitory <i class="bi bi-chevron-right chevron"></i></a>
+            <a href="services.html?cat=academic" class="quicklink-row"><i class="bi bi-journal-text qi"></i> Course Registration <i class="bi bi-chevron-right chevron"></i></a>
+            <a href="services.html?cat=scholarship" class="quicklink-row"><i class="bi bi-mortarboard qi"></i> Scholarship <i class="bi bi-chevron-right chevron"></i></a>
+            <a href="guides.html" class="quicklink-row"><i class="bi bi-calendar3 qi"></i> Academic Calendar <i class="bi bi-chevron-right chevron"></i></a>
+            <a href="guides.html" class="quicklink-row"><i class="bi bi-file-earmark-arrow-down qi"></i> Download Forms <i class="bi bi-chevron-right chevron"></i></a>
+          </div>
+
+          <div class="side-panel">
+            <div class="side-panel-title">Useful Contacts</div>
+            <div class="contact-row">
+              <div><div class="c-title">International Office</div><div class="c-phone">041-530-1275</div></div>
+              <div class="call-icon"><i class="bi bi-telephone-fill"></i></div>
+            </div>
+            <div class="contact-row">
+              <div><div class="c-title">Dormitory(Global Village)</div><div class="c-phone">041-530-1405</div></div>
+              <div class="call-icon"><i class="bi bi-telephone-fill"></i></div>
+            </div>
+            <div class="contact-row">
+              <div><div class="c-title">Immigration Office</div><div class="c-phone">1345</div></div>
+              <div class="call-icon"><i class="bi bi-telephone-fill"></i></div>
+            </div>
+            <div class="contact-row">
+              <div><div class="c-title">Emergency</div><div class="c-phone">119</div></div>
+              <div class="call-icon"><i class="bi bi-telephone-fill"></i></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="foot-brand">
+      <div class="brand-mark" style="width:32px;height:32px;"><img src="assets/images/schuuniver.png" alt="SCH logo"></div>
+      SOON CHUN HYANG UNIVERSITY
+    </div>
+    <div>© 2026 Soonchunhyang University. All rights reserved.</div>
+  </footer>
+
+</div>
+
+<script src="assets/js/dashboard.js"></script>
+<script src="assets/js/sidebar.js"></script>
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/dropdown.js"></script>
+<script src="assets/js/session.js"></script>
+</body>
+</html>
